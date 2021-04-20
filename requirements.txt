@@ -72,7 +72,6 @@ python-jwt==3.3.0
 python-nmap==0.6.4
 requests==2.25.1
 requests-toolbelt==0.9.1
-scripting==0.2
 selenium==3.141.0
 setuptools==56.0.0
 sh==1.14.1
