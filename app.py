@@ -10,29 +10,30 @@ app = Flask(__name__)
 
 @app.route('/buy')
 def buy():
-    print("zz")
     file = os.path.join(directory, 'data.json')
     with open(file, "r") as jsonFile:
         data = json.load(jsonFile)
     data["amount"] += 1
     with open(file, "w") as jsonFile:
         json.dump(data, jsonFile)
-    print("zz")
     return return_winst()
 
 
 def calculate_winst():
-    url = "https://markets.ft.com/data/funds/tearsheet/charts?s=BE6264508548:EUR"
+    url = "https://www.morningstar.be/be/funds/snapshot/snapshot.aspx?id=F00000VA3Q"
     source = requests.get(url).text
     soup = BeautifulSoup(source, 'lxml')
 
-    section = soup.find('section')
-    div = section.find(
-        'div', class_='mod-tearsheet-overview__quote').ul.li
+    div = soup.find('div', class_='clearfix TopRelPos')
+    table = soup.find(
+        'table', class_='snapshotTextColor snapshotTextFontStyle snapshotTable overviewKeyStatsTable')
 
-    current = div.find('span', class_='mod-ui-data-list__value').text
-    print(current)
+    current = table.find('td', class_='line text').text
+    current = current[4:]
+    current = current.replace(",", ".")
+
     current = float(current) * float(get_amountBought())
+
     paid = get_price()
 
     winst = current - paid
@@ -63,8 +64,7 @@ def get_price():
     return total
 
 
-@app.route('/')
+@ app.route('/')
 def return_winst():
     price = calculate_winst()
-
     return render_template('index.html', current=price)
