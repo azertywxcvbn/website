@@ -4,7 +4,7 @@ import json
 import urllib3
 import requests
 import os
-
+from bs4 import BeautifulSoup
 directory = os.path.dirname(__file__)
 app = Flask(__name__)
 
@@ -69,7 +69,3 @@ def return_winst():
     price = calculate_winst()
 
     return render_template('index.html', current=price)
-
-
-if __name__ == "main":
-    app.run(debug=False, host='0.0.0.0')
