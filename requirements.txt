@@ -86,7 +86,7 @@ PyTweening==1.0.3
 pyzmq==19.0.1
 qt5-applications==5.15.2.2.1
 qt5-tools==5.15.2.1.0.1
-requests==2.25.1
+
 
 
 scripting==0.2
