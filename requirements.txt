@@ -74,7 +74,6 @@ requests==2.25.1
 requests-toolbelt==0.9.1
 rope==0.19.0
 rsa==4.7.2
-scapy==2.4.5
 scripting==0.2
 selenium==3.141.0
 setuptools==56.0.0
