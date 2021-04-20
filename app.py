@@ -2,7 +2,6 @@ from flask import Flask, render_template
 import requests
 import json
 import urllib3
-import requests
 import os
 from bs4 import BeautifulSoup
 directory = os.path.dirname(__file__)
