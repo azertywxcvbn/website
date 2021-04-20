@@ -4,7 +4,6 @@ import json
 import urllib3
 import requests
 import os
-import numpy
 from bs4 import BeautifulSoup
 directory = os.path.dirname(__file__)
 app = Flask(__name__)
