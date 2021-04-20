@@ -80,7 +80,6 @@ PyScreeze==0.1.26
 python-dateutil==1.5
 python-dotenv==0.16.0
 python-jwt==2.0.1
-PyTweening==1.0.3
 scripting==0.2
 selenium==3.141.0
 setuptools==47.1.0
