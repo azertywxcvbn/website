@@ -52,20 +52,20 @@ li a:hover{
 .active{
     text-decoration: underline white;
 }
-
 .cardgrid{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-columns: 1fr 1fr 1fr;
 }
+
 .card1 {
-    margin-top: 100px;
     grid-column-start: 2;
+    margin-top: 100px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     background-image: linear-gradient(to bottom right, #667eea, #764ba2);
     border-radius: 5px;
     margin-bottom: 10px; 
-    min-width: 200px;
-    max-width: 400px;
+    min-width: 300px;
+    max-width: 300px;
     min-height: 150px;
     
     
@@ -114,5 +114,16 @@ li a:hover{
 
 .containercard {
     padding: 20px ;
+   
+}
+
+@media(max-width:400px){
     
+    .card1 {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        margin-left: 10px;
+        margin-right: 10px;
+        min-width: 100%;
+    }
 }
