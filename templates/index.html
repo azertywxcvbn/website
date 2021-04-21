@@ -4,31 +4,42 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Winst App</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <title>Profit App</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylesheet.css') }}">
+
+
 </head>
-<section class="hero is-dark is-bold">
-    <div class="hero-body">
-        <div class="container">
-            <h1 class="title">
-                Winst: €{{ current }}
-            </h1>
-
-
-        </div>
-
-    </div>
-</section>
 
 <body>
-    <section class="section">
-        <div class="container">
-            <div class="content is-medium">
+    <nav>
+        <ul>
+            <li>
+                <a href="" class="active">
+                    Home
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <section class="cardgrid">
+
+        <div class="card1">
+            <div class="containercard">
+                <h4 class="center fontbig">Profit </h4>
+
+                <div class="gridprofit">
+                    <p class="gridprofittext"> Your profit: €{{current}}</p>
+                    <img src="{{url_for('static', filename='img/arrow.svg')}}" alt="foto-arrow"
+                        class="arrow {{arrowrotation}}">
+
+                </div>
 
 
             </div>
         </div>
+
     </section>
 </body>
 
