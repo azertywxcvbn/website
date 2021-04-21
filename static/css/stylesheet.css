@@ -114,13 +114,33 @@ li a:hover{
 .gridprofittext{
     font-size: large;
     grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.gridprofittex2{
+    font-size: large;
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+
 }
 .gridinfotext{
     font-size: large;
     grid-column-start: 1;
     grid-column-end:  3;
 }
+.centeruser{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 20%;
 
+
+}
+.iconuser{
+    
+    width: 80px;
+}
 .gridinfotext2{
     margin-top: 10px;
     font-size: large;

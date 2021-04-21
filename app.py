@@ -102,8 +102,9 @@ def getRotation():
 
 @ app.route('/')
 def return_winst():
+    amount = get_amountBought()
     currentprice = getCurrentPrice()
     price = calculate_winst()
     date = getDate()
     arrowrotation = getRotation()
-    return render_template('index.html', current=price, date=date, arrowrotation=arrowrotation, currentprice=currentprice)
+    return render_template('index.html', current=price, date=date, arrowrotation=arrowrotation, currentprice=currentprice, amount=amount)

@@ -16,22 +16,26 @@
         <ul>
             <li>
                 <a href="" class="active">
-                    Home
-                </a>
-            </li>
-            <li>
-                <a href="">
                     Buy
                 </a>
             </li>
             <li>
+
+            </li>
+            <li>
                 <a href="">
-                    Overview
+                    View
                 </a>
             </li>
         </ul>
     </nav>
+    <div class="centeruser">
+        <a href="">
+            <img src="{{url_for('static', filename='img/user.svg')}}" alt="foto-arrow" class="iconuser">
+        </a>
 
+
+    </div>
 
     <section class="cardgrid">
         <div class="card1">
@@ -40,6 +44,7 @@
 
                 <div class="gridprofit">
                     <p class="gridprofittext"> Your profit: €{{current}}</p>
+                    <p class="gridprofittex2">Shares: {{amount}}</P>
                     <img src="{{url_for('static', filename='img/arrow.svg')}}" alt="foto-arrow"
                         class="arrow {{arrowrotation}}">
                 </div>
