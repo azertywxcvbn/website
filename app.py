@@ -19,7 +19,21 @@ def buy():
     return return_winst()
 
 
+def getDate():
+    url = "https://www.morningstar.be/be/funds/snapshot/snapshot.aspx?id=F00000VA3Q"
+    source = requests.get(url).text
+    soup = BeautifulSoup(source, 'lxml')
+
+    div = soup.find('div', class_='clearfix TopRelPos')
+    table = soup.find(
+        'table', class_='snapshotTextColor snapshotTextFontStyle snapshotTable overviewKeyStatsTable')
+
+    date = table.find('span', class_='heading').text
+    return date
+
+
 def calculate_winst():
+
     url = "https://www.morningstar.be/be/funds/snapshot/snapshot.aspx?id=F00000VA3Q"
     source = requests.get(url).text
     soup = BeautifulSoup(source, 'lxml')
@@ -64,7 +78,17 @@ def get_price():
     return total
 
 
+def getRotation():
+    if calculate_winst() > 0:
+        return "rotateup"
+    else:
+        return "rotatedown"
+
+
 @ app.route('/')
 def return_winst():
+    getDate()
     price = calculate_winst()
-    return render_template('index.html', current=price)
+    date = getDate()
+    arrowrotation = getRotation()
+    return render_template('index.html', current=price, date=date, arrowrotation=arrowrotation)
