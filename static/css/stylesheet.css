@@ -60,7 +60,9 @@ li a:hover{
 .cardgrid{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     padding: 10px;
+    grid-gap: 30px;
 }
 
 .card1 {
@@ -73,10 +75,21 @@ li a:hover{
     margin-bottom: 10px; 
     min-width: 300px;
     max-width: 300px;
-    min-height: 150px;
+    min-height: 150px;  
+}
+
+.card2 {
+    color: white;
+    grid-column-start: 2;
+    grid-row-start: 2;
     
-    
-    
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-image: linear-gradient(to bottom right, #667eea, #764ba2);
+    border-radius: 15px;
+    margin-bottom: 100px; 
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 150px;  
 }
 .rotateup{
     -webkit-transform: rotate(270deg);
@@ -102,7 +115,19 @@ li a:hover{
     font-size: large;
     grid-column-start: 1;
 }
+.gridinfotext{
+    font-size: large;
+    grid-column-start: 1;
+    grid-column-end:  3;
+}
 
+.gridinfotext2{
+    margin-top: 10px;
+    font-size: large;
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end:  3;
+}
 .gridprofit{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -128,6 +153,11 @@ li a:hover{
 @media(max-width:400px){
     
     .card1 {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        min-width: 100%;
+    }
+    .card2 {
         grid-column-start: 1;
         grid-column-end: 4;
         min-width: 100%;

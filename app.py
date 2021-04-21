@@ -32,6 +32,21 @@ def getDate():
     return date
 
 
+def getCurrentPrice():
+    url = "https://www.morningstar.be/be/funds/snapshot/snapshot.aspx?id=F00000VA3Q"
+    source = requests.get(url).text
+    soup = BeautifulSoup(source, 'lxml')
+
+    div = soup.find('div', class_='clearfix TopRelPos')
+    table = soup.find(
+        'table', class_='snapshotTextColor snapshotTextFontStyle snapshotTable overviewKeyStatsTable')
+
+    current = table.find('td', class_='line text').text
+    current = current[4:]
+    current = current.replace(",", ".")
+    return current
+
+
 def calculate_winst():
 
     url = "https://www.morningstar.be/be/funds/snapshot/snapshot.aspx?id=F00000VA3Q"
@@ -87,8 +102,8 @@ def getRotation():
 
 @ app.route('/')
 def return_winst():
-    getDate()
+    currentprice = getCurrentPrice()
     price = calculate_winst()
     date = getDate()
     arrowrotation = getRotation()
-    return render_template('index.html', current=price, date=date, arrowrotation=arrowrotation)
+    return render_template('index.html', current=price, date=date, arrowrotation=arrowrotation, currentprice=currentprice)

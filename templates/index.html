@@ -16,7 +16,7 @@
         <ul>
             <li>
                 <a href="" class="active">
-                    HOME
+                    Home
                 </a>
             </li>
             <li>
@@ -34,7 +34,6 @@
 
 
     <section class="cardgrid">
-
         <div class="card1">
             <div class="containercard">
                 <h4 class="center fontbig">Profit </h4>
@@ -43,13 +42,18 @@
                     <p class="gridprofittext"> Your profit: €{{current}}</p>
                     <img src="{{url_for('static', filename='img/arrow.svg')}}" alt="foto-arrow"
                         class="arrow {{arrowrotation}}">
-
                 </div>
-
-
             </div>
         </div>
-
+        <div class="card2">
+            <div class="containercard">
+                <h4 class="center fontbig">Info </h4>
+                <div class="gridprofit">
+                    <p class="gridinfotext"> Current price: €{{currentprice}}</p>
+                    <p class="gridinfotext2">Last update: {{date}}</p>
+                </div>
+            </div>
+        </div>
     </section>
 </body>
 
